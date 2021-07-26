@@ -20,7 +20,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="$USER_HOME$/.m2/wrapper/dists/apache-maven-3.6.3-bin/1iopthnavndlasol9gbrbg6bf2/apache-maven-3.6.3" />
+        <option name="mavenHome" value="C:\Users\EL Zhang\.m2\wrapper\dists\apache-maven-3.6.3-bin\1iopthnavndlasol9gbrbg6bf2\apache-maven-3.6.3" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -88,6 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1627306225953</updated>
       <workItem from="1627306227836" duration="6121000" />
+      <workItem from="1627312373792" duration="863000" />
     </task>
     <servers />
   </component>
