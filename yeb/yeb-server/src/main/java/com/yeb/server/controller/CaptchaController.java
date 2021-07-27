@@ -34,9 +34,9 @@ public class CaptchaController {
         // return a jpeg
         response.setContentType("image/jpeg");
         //-------------------生成验证码 begin --------------------------
-        //获取验证码文本内容
-        String text = defaultKaptcha.createText();
-        System.out.println("验证码内容："+text);
+        // 获取验证码文本内容
+//        String text = defaultKaptcha.createText();
+//        System.out.println("验证码内容："+text);
         //将验证码文本内容放入session
         request.getSession().setAttribute("captcha",text);
         //根据文本验证码内容创建图形验证码
