@@ -1,4 +1,4 @@
-package com.yeb.server.config;
+package com.yeb.server.config.security;
 
 import com.yeb.server.config.component.JwtAuthenticationTokenFilter;
 import com.yeb.server.config.component.RestAuthenticationEntryPoint;
@@ -86,6 +86,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
     @Override
+
     @Bean
     public UserDetailsService userDetailsService() {
         //获取登录用户信息

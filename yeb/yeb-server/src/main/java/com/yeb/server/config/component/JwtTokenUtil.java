@@ -26,7 +26,7 @@ public class JwtTokenUtil {
         return Jwts.builder() //这里其实就是new一个JwtBuilder，设置jwt的body
                 .setClaims(claims)  //如果有私有声明，一定要先设置这个自己创建的私有的声明，这个是给builder的claim赋值，一旦写在标准的声明赋值之后，就是覆盖了那些标准的声明的
                 .setExpiration(generateExpirationDate()) // 设置过期时间
-                .signWith(SignatureAlgorithm.ES512, secret) //设置签名使用的签名算法和签名使用的秘钥
+                .signWith(SignatureAlgorithm.HS512, secret) //设置签名使用的签名算法和签名使用的秘钥
                 .compact();
 
         // 还有 .setId(id)  设置jti(JWT ID)：是JWT的唯一标识，根据业务需要，这个可以设置为一个不重复的值，主要用来作为一次性token,从而回避重放攻击。
