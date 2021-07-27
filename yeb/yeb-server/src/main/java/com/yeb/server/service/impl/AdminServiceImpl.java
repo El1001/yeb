@@ -1,8 +1,7 @@
 package com.yeb.server.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.toolkit.StringUtils;
-import com.yeb.server.config.component.JwtTokenUtil;
+import com.yeb.server.config.security.component.JwtTokenUtil;
 import com.yeb.server.pojo.Admin;
 import com.yeb.server.mapper.AdminMapper;
 import com.yeb.server.pojo.RespBean;
@@ -16,6 +15,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -48,11 +48,11 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
     private String tokenHead;
 
     @Override
-    public RespBean login(String username, String password, HttpServletRequest request) {
-       /* String captcha = (String) request.getSession().getAttribute("captcha");
+    public RespBean login(String username, String password, String code,HttpServletRequest request) {
+       String captcha = (String) request.getSession().getAttribute("captcha");
         if (StringUtils.isEmpty(code) || !captcha.equalsIgnoreCase(code)) {
             return RespBean.error("验证码输入错误，请重新输入！");
-        } */
+        }
         //登录
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
         if (null == userDetails || !passwordEncoder.matches(password, userDetails.getPassword())) {

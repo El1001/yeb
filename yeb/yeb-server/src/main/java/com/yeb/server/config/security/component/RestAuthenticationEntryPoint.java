@@ -1,4 +1,4 @@
-package com.yeb.server.config.component;
+package com.yeb.server.config.security.component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yeb.server.pojo.RespBean;

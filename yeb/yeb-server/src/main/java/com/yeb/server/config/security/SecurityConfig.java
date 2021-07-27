@@ -1,8 +1,8 @@
 package com.yeb.server.config.security;
 
-import com.yeb.server.config.component.JwtAuthenticationTokenFilter;
-import com.yeb.server.config.component.RestAuthenticationEntryPoint;
-import com.yeb.server.config.component.RestfulAccessDeniedHandler;
+import com.yeb.server.config.security.component.JwtAuthenticationTokenFilter;
+import com.yeb.server.config.security.component.RestAuthenticationEntryPoint;
+import com.yeb.server.config.security.component.RestfulAccessDeniedHandler;
 import com.yeb.server.pojo.Admin;
 import com.yeb.server.service.IAdminService;
 import org.springframework.beans.factory.annotation.Autowired;

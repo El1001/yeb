@@ -1,4 +1,4 @@
-package com.yeb.server.config.component;
+package com.yeb.server.config.security.component;
 // 当访问接口没有权限时，自定义返回结果类
 
 import com.fasterxml.jackson.databind.ObjectMapper;
