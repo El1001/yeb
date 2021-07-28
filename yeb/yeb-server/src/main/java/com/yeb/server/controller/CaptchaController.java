@@ -35,7 +35,7 @@ public class CaptchaController {
         response.setContentType("image/jpeg");
         //-------------------生成验证码 begin --------------------------
         // 获取验证码文本内容
-//        String text = defaultKaptcha.createText();
+        String text = defaultKaptcha.createText();
 //        System.out.println("验证码内容："+text);
         //将验证码文本内容放入session
         request.getSession().setAttribute("captcha",text);
