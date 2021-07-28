@@ -6,7 +6,33 @@
   <component name="ChangeListManager">
     <list default="true" id="e3888e34-af2a-4429-a94c-fefd5c6d3590" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/controller/CaptchaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/controller/CaptchaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/AdminMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/AdminRoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/AppraiseMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/DepartmentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/EmployeeEcMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/EmployeeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/EmployeeRemoveMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/EmployeeTrainMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/JoblevelMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/MailLogMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/MenuMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/MenuRoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/NationMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/OplogMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/PoliticsStatusMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/PositionMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/RoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/SalaryAdjustMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/SalaryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/SysMsgContentMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-generator/target/classes/mapper/SysMsgMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/mapper/MenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/mapper/MenuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/pojo/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/pojo/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/service/IMenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/service/IMenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/service/impl/MenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/MenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/MenuMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +166,7 @@
       <workItem from="1627306227836" duration="6121000" />
       <workItem from="1627312373792" duration="863000" />
       <workItem from="1627353236834" duration="945000" />
-      <workItem from="1627354270404" duration="19294000" />
+      <workItem from="1627354270404" duration="21711000" />
     </task>
     <servers />
   </component>
