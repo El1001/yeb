@@ -3,8 +3,10 @@ package com.yeb.server.service;
 import com.yeb.server.pojo.Admin;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.yeb.server.pojo.RespBean;
+import com.yeb.server.pojo.Role;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * <p>
@@ -27,5 +29,8 @@ public interface IAdminService extends IService<Admin> {
 * @param username
 */
  Admin getAdminByUserName(String username);
+//根据用户id查询角色列表
+List<Role> getRoles(Integer adminId);
+
 
 }

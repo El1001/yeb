@@ -5,23 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3888e34-af2a-4429-a94c-fefd5c6d3590" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_xiaoymin_swagger_bootstrap_ui_1_9_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/config/security/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_xiaoymin_knife4j_spring_ui_2_0_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_21_0_GA.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_25_0_GA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/config/security/component/CustomFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/config/security/component/CustomUrlDecisionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/config/Swagger2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/config/Swagger2Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/config/security/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/config/RedisConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/config/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/config/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/config/security/component/RestAuthenticationEntryPoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/config/security/component/RestAuthenticationEntryPoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/config/security/component/RestfulAccessDeniedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/config/security/component/RestfulAccessDeniedHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/mapper/MenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/mapper/MenuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/mapper/RoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/mapper/RoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/pojo/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/pojo/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/pojo/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/pojo/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/service/IAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/service/IAdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/service/IMenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/service/IMenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/service/impl/AdminServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/service/impl/MenuServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/config/Swagger2Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/config/Swagger2Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/MenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/MenuMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/RoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/resources/mapper/RoleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/config/security/RedisConfig.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/config/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/config/security/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/config/security/component/RestAuthenticationEntryPoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/config/security/component/RestAuthenticationEntryPoint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/config/security/component/RestfulAccessDeniedHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/config/security/component/RestfulAccessDeniedHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/controller/HelloController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/controller/HelloController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/service/impl/AdminServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/service/impl/MenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/service/impl/MenuServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/yeb-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/yeb-server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/config/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +168,7 @@
       <workItem from="1627354270404" duration="29624000" />
       <workItem from="1627457213257" duration="392000" />
       <workItem from="1627457632058" duration="141000" />
-      <workItem from="1627457799168" duration="1041000" />
+      <workItem from="1627457799168" duration="5521000" />
     </task>
     <servers />
   </component>

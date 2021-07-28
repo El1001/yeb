@@ -33,16 +33,22 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements IM
     public List<Menu> getMenusByAdminId() {
 
         // Spring框架借助ThreadLocal来保存和传递用户登录信息。我们通常是使用下面这段代码，来获取保存在ThreadLocal中的用户信息。
-        Integer adminId =  ((Admin)SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId();
+        Integer adminId =  ((Admin) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId();
         ValueOperations<String, Object> valueOperations = redisTemplate.opsForValue();
+        //从redis获取菜单数据
         List<Menu> menus = (List<Menu>) valueOperations.get("menu_" + adminId);
-
-        if(CollectionUtils.isEmpty(menus)) {
-            //如果没数据，数据库中查询，并设置到缓存中
+        //如果为空，去数据库获取
+        if (CollectionUtils.isEmpty(menus)){
             menus = menuMapper.getMenusByAdminId(adminId);
-            valueOperations.set("menu_" + adminId,menus);
+            //将数据设置到Redis中
+            valueOperations.set("menu_"+adminId,menus);
         }
         return menus;
-    };
+    }
+
+    @Override
+    public List<Menu> getAllMenusWithRole() {
+        return menuMapper.getMenusWithRole();
+    }
 
 }

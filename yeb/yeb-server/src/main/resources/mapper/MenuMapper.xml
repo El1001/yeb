@@ -64,4 +64,30 @@
             m2.id
     </select>
 
+
+    <resultMap id="MenusWithRole" type="com.yeb.server.pojo.Menu" extends="BaseResultMap">
+        <collection property="roles" ofType="com.yeb.server.pojo.Role">
+            <id column="rid" property="id"/>
+            <result column="rname" property="name"/>
+            <result column="rnameZh" property="nameZh"/>
+        </collection>
+    </resultMap>
+
+    <!-- 根据角色获取菜单列表 -->
+    <select id="getMenusWithRole" resultMap="MenusWithRole">
+        SELECT
+            m.*,
+            r.id AS rid,
+            r.`name` AS rname,
+            r.nameZh AS rnameZh
+        FROM
+            t_menu m,
+            t_menu_role mr,
+            t_role r
+        WHERE
+            m.id = mr.mid
+          AND r.id = mr.rid
+        ORDER BY
+            m.id
+    </select>
 </mapper>

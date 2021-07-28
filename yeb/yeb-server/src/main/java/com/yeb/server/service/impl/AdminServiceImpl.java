@@ -2,9 +2,11 @@ package com.yeb.server.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.yeb.server.config.security.component.JwtTokenUtil;
+import com.yeb.server.mapper.RoleMapper;
 import com.yeb.server.pojo.Admin;
 import com.yeb.server.mapper.AdminMapper;
 import com.yeb.server.pojo.RespBean;
+import com.yeb.server.pojo.Role;
 import com.yeb.server.service.IAdminService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,7 @@ import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -46,6 +49,9 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
 
     @Value("${jwt.tokenHead}")
     private String tokenHead;
+
+    @Autowired
+    private RoleMapper roleMapper;
 
     @Override
     public RespBean login(String username, String password, String code,HttpServletRequest request) {
@@ -82,5 +88,10 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
     @Override
     public Admin getAdminByUserName(String username) {
         return adminMapper.selectOne(new QueryWrapper<Admin>().eq("username",username));
+    }
+
+    @Override
+    public List<Role> getRoles(Integer adminId) {
+        return roleMapper.getRoles(adminId);
     }
 }
