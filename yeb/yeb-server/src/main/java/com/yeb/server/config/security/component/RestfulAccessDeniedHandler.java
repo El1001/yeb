@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+
+// 权限不足
 @Component
 public class RestfulAccessDeniedHandler implements AccessDeniedHandler {
     @Override

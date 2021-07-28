@@ -15,8 +15,8 @@ import java.io.PrintWriter;
 /**
  * 当未登录或者token失效时访问接口时，自定义的返回结果
  *
- * @author zhoubin
- * @since 1.0.0
+ *
+ *
  */
 @Component
 public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
@@ -26,7 +26,7 @@ public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
         httpServletResponse.setCharacterEncoding("UTF-8");
         httpServletResponse.setContentType("application/json");
         PrintWriter out = httpServletResponse.getWriter();
-        RespBean bean = RespBean.error("权限不足，请联系管理员！");
+        RespBean bean = RespBean.error("尚未登录，请登录！");
         bean.setCode(401);
         out.write(new ObjectMapper().writeValueAsString(bean));
         out.flush();

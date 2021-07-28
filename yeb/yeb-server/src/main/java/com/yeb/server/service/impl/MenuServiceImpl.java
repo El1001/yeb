@@ -6,8 +6,11 @@ import com.yeb.server.mapper.MenuMapper;
 import com.yeb.server.service.IMenuService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.List;
 
@@ -24,12 +27,22 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements IM
 
     @Autowired
     MenuMapper menuMapper;
+    @Autowired
+    private RedisTemplate<String,Object> redisTemplate;
     @Override
     public List<Menu> getMenusByAdminId() {
 
         // Spring框架借助ThreadLocal来保存和传递用户登录信息。我们通常是使用下面这段代码，来获取保存在ThreadLocal中的用户信息。
-        return menuMapper.getMenusByAdminId(((Admin)
-                SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId());
+        Integer adminId =  ((Admin)SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId();
+        ValueOperations<String, Object> valueOperations = redisTemplate.opsForValue();
+        List<Menu> menus = (List<Menu>) valueOperations.get("menu_" + adminId);
+
+        if(CollectionUtils.isEmpty(menus)) {
+            //如果没数据，数据库中查询，并设置到缓存中
+            menus = menuMapper.getMenusByAdminId(adminId);
+            valueOperations.set("menu_" + adminId,menus);
+        }
+        return menus;
     };
 
 }
