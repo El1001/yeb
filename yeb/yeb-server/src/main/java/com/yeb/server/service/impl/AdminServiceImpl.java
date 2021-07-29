@@ -2,13 +2,17 @@ package com.yeb.server.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.yeb.server.config.security.component.JwtTokenUtil;
+import com.yeb.server.mapper.AdminRoleMapper;
 import com.yeb.server.mapper.RoleMapper;
 import com.yeb.server.pojo.Admin;
 import com.yeb.server.mapper.AdminMapper;
+import com.yeb.server.pojo.AdminRole;
 import com.yeb.server.pojo.RespBean;
 import com.yeb.server.pojo.Role;
+import com.yeb.server.service.IAdminRoleService;
 import com.yeb.server.service.IAdminService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.yeb.server.utils.AdminUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -53,11 +57,14 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
     @Autowired
     private RoleMapper roleMapper;
 
+    @Autowired
+    private AdminRoleMapper adminRoleMapper;
+
     @Override
-    public RespBean login(String username, String password, String code,HttpServletRequest request) {
+    public RespBean login(String username, String password, String code, HttpServletRequest request) {
         // 从session 中拿到 验证码
-       String captcha = (String) request.getSession().getAttribute("captcha");
-       // 若验证码为空 或者 验证码不匹配 返回错误
+        String captcha = (String) request.getSession().getAttribute("captcha");
+        // 若验证码为空 或者 验证码不匹配 返回错误
         if (StringUtils.isEmpty(code) || !captcha.equalsIgnoreCase(code)) {
             return RespBean.error("验证码输入错误，请重新输入！");
         }
@@ -90,11 +97,26 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
      */
     @Override
     public Admin getAdminByUserName(String username) {
-        return adminMapper.selectOne(new QueryWrapper<Admin>().eq("username",username));
+        return adminMapper.selectOne(new QueryWrapper<Admin>().eq("username", username));
     }
 
     @Override
     public List<Role> getRoles(Integer adminId) {
         return roleMapper.getRoles(adminId);
+    }
+
+    @Override
+    public List<Admin> getAllAdmins(String keywords) {
+        return adminMapper.getAllAdmins(AdminUtils.getCurrentAdmin().getId(), keywords);
+    }
+
+    @Override
+    public RespBean updateAdminRole(Integer adminId, Integer[] rids) {
+        adminRoleMapper.delete(new QueryWrapper<AdminRole>().eq("adminId", adminId));
+        Integer result = adminRoleMapper.addRole(adminId, rids);
+        if (rids.length == result) {
+            return RespBean.success("更新成功!");
+        }
+        return RespBean.error("更新失败!");
     }
 }

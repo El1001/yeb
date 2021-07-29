@@ -31,6 +31,7 @@ public class PermissController {
     @ApiOperation(value = "获取所有角色")
     @GetMapping("/")
     public List<Role> getAllRoles() {
+
         return roleService.list();
     }
 
