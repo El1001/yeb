@@ -55,12 +55,15 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
 
     @Override
     public RespBean login(String username, String password, String code,HttpServletRequest request) {
+        // 从session 中拿到 验证码
        String captcha = (String) request.getSession().getAttribute("captcha");
+       // 若验证码为空 或者 验证码不匹配 返回错误
         if (StringUtils.isEmpty(code) || !captcha.equalsIgnoreCase(code)) {
             return RespBean.error("验证码输入错误，请重新输入！");
         }
         //登录
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+        // 通过 spring security 自带方法验证
         if (null == userDetails || !passwordEncoder.matches(password, userDetails.getPassword())) {
             return RespBean.error("用户名或密码不正确");
         }

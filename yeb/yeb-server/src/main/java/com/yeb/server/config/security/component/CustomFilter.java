@@ -28,7 +28,7 @@ public class CustomFilter implements FilterInvocationSecurityMetadataSource {
         //拉去菜单
         List<Menu> menus = menuService.getAllMenusWithRole();
         for (Menu menu : menus) {
-            // 判断url 余菜单角色是否匹配
+            // 判断url 和菜单角色是否匹配
             if (antPathMatcher.match(menu.getUrl(), requestUrl)) {
                 String[] str = menu.getRoles().stream().map(Role::getName).toArray(String[]::new);
                 return SecurityConfig.createList(str);
