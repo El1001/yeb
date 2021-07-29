@@ -47,6 +47,7 @@ public class JoblevelController {
     @ApiOperation(value = "更改职称")
     @PutMapping("/")
     public RespBean updateJobLevel(@RequestBody Joblevel jobLevel) {
+        jobLevel.setCreateDate(LocalDateTime.now());
         if (joblevelService.updateById(jobLevel)) {
             return RespBean.success("更新成功!");
         }

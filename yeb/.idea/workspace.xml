@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3888e34-af2a-4429-a94c-fefd5c6d3590" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/controller/PermissController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/controller/PermissController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/controller/JoblevelController.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/controller/JoblevelController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/exception/GlobalException.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/exception/GlobalException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/pojo/Joblevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/pojo/Joblevel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/controller/JoblevelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/controller/JoblevelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/exception/GlobalException.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/exception/GlobalException.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +150,7 @@
       <workItem from="1627354270404" duration="29624000" />
       <workItem from="1627457213257" duration="392000" />
       <workItem from="1627457632058" duration="141000" />
-      <workItem from="1627457799168" duration="13621000" />
+      <workItem from="1627457799168" duration="14478000" />
     </task>
     <servers />
   </component>
