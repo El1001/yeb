@@ -10,7 +10,7 @@ import java.sql.SQLIntegrityConstraintViolationException;
 // 全局异常处理
 
 /*
-@ControllerAdvice ：表示这是一个控制器增强类，当控制器发生异常且符合类中定义的拦截异常类，将会被拦截
+@ControllerAdvice ：表示这是一个控制器增强类，当控制器发生异常且符合类中定义的拦截异 常类，将会被拦截
 @ExceptionHandler ：定义拦截的异常类*/
 @RestControllerAdvice
 public class GlobalException {
