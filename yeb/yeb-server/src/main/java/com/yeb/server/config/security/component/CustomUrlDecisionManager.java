@@ -23,7 +23,7 @@ public class CustomUrlDecisionManager implements AccessDecisionManager {
         for (ConfigAttribute configAttribute : configAttributes) {
             //当前url所需角色
             String needRole = configAttribute.getAttribute();
-            //判断角色是否登录即可访问的角色，此角色在CustomFilter中设置
+            //判断角色是否登录即可访问的角色，此角色在CustomFilter中设置 CustomFilter 里判断过后
             if ("ROLE_LOGIN".equals(needRole)){
                 //判断是否登录
                 if (authentication instanceof AnonymousAuthenticationToken){
@@ -33,7 +33,7 @@ public class CustomUrlDecisionManager implements AccessDecisionManager {
                 }
             }
             //判断用户角色是否为url所需角色
-            Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+            Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities(); // 权限集合
             for (GrantedAuthority authority : authorities) {
                 if (authority.getAuthority().equals(needRole)){
                     return;

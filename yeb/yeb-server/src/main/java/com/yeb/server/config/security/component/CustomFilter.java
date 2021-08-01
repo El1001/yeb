@@ -14,6 +14,7 @@ import org.springframework.util.AntPathMatcher;
 import java.util.Collection;
 import java.util.List;
 
+// 根据请求url 判断所需要角色
 @Component
 public class CustomFilter implements FilterInvocationSecurityMetadataSource {
     @Autowired
@@ -28,13 +29,15 @@ public class CustomFilter implements FilterInvocationSecurityMetadataSource {
         //拉去菜单
         List<Menu> menus = menuService.getAllMenusWithRole();
         for (Menu menu : menus) {
-            // 判断url 和菜单角色是否匹配
+            // 判断url 和菜单角色是否匹配 循环逐个判断
             if (antPathMatcher.match(menu.getUrl(), requestUrl)) {
+                // getrole 在从map 中提出名字 在转换成 string数组
                 String[] str = menu.getRoles().stream().map(Role::getName).toArray(String[]::new);
+                // 如果匹配的上 把url 放进去
                 return SecurityConfig.createList(str);
             }
         }
-        //没匹配的url默认为登录即可访问
+        //没匹配的url 默认为登录 即可访问
         return SecurityConfig.createList("ROLE_LOGIN");
 
     }

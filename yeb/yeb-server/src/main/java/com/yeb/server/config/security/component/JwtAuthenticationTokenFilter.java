@@ -50,7 +50,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
                 }
             }
         }
-
+        // 登录后方向
         filterChain.doFilter(httpServletRequest,httpServletResponse);
     }
 }
