@@ -9,7 +9,7 @@ import java.time.LocalDate;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author zel
@@ -20,4 +20,9 @@ public interface IEmployeeService extends IService<Employee> {
     //   获取员工分页
     RespPageBean getEmployeeByPage(Integer currentPages, Integer size, Employee employee, LocalDate[] beginDateScope);
 
+    // 获取最大工号
+    RespBean maxWorkID();
+
+    //  添加员工
+    RespBean addEmp(Employee employee);
 }
