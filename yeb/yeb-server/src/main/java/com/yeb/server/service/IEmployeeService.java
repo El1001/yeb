@@ -6,6 +6,7 @@ import com.yeb.server.pojo.RespBean;
 import com.yeb.server.pojo.RespPageBean;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * <p>
@@ -25,4 +26,12 @@ public interface IEmployeeService extends IService<Employee> {
 
     //  添加员工
     RespBean addEmp(Employee employee);
+
+    /**
+     * 查询员工
+     * @param id
+     * @return
+     */
+    List<Employee> getEmployee(Integer id);
+
 }
