@@ -164,6 +164,7 @@ public class EmployeeController {
             List<Employee> list = ExcelImportUtil.importExcel(file.getInputStream(), Employee.class, params);
             list.forEach(employee -> {
                 //民族id
+                System.out.println(nationList.get(nationList.indexOf(new Nation(employee.getNation().getName()))).getId());
                 employee.setNationId(nationList.get(nationList.indexOf(new Nation(employee.getNation().getName()))).getId());
                 //政治面貌id
                 employee.setPoliticId(politicsStatusList.get(politicsStatusList.indexOf(new PoliticsStatus(employee.getPoliticsStatus().getName()))).getId());
