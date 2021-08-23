@@ -1,17 +1,16 @@
 package com.yeb.server.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.yeb.server.config.security.component.JwtTokenUtil;
+import com.yeb.server.mapper.AdminMapper;
 import com.yeb.server.mapper.AdminRoleMapper;
 import com.yeb.server.mapper.RoleMapper;
 import com.yeb.server.pojo.Admin;
-import com.yeb.server.mapper.AdminMapper;
 import com.yeb.server.pojo.AdminRole;
 import com.yeb.server.pojo.RespBean;
 import com.yeb.server.pojo.Role;
-import com.yeb.server.service.IAdminRoleService;
 import com.yeb.server.service.IAdminService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.yeb.server.utils.AdminUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,6 +18,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -116,6 +116,27 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
         Integer result = adminRoleMapper.addRole(adminId, rids);
         if (rids.length == result) {
             return RespBean.success("更新成功!");
+        }
+        return RespBean.error("更新失败!");
+    }
+    /**
+     * 更新用户密码
+     *
+     * @param oldPass
+     * @param pass
+     * @param adminId
+     * @return
+     */
+    @Override
+    public RespBean updatePassword(String oldPass, String pass, Integer adminId) {
+        Admin admin = adminMapper.selectById(adminId);
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        if (encoder.matches(oldPass, admin.getPassword())) {
+            admin.setPassword(encoder.encode(pass));
+            int result = adminMapper.updateById(admin);
+            if (1 == result) {
+                return RespBean.success("更新成功!");
+            }
         }
         return RespBean.error("更新失败!");
     }
