@@ -23,22 +23,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e3888e34-af2a-4429-a94c-fefd5c6d3590" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/config/RabbitMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/pojo/MailConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/task/MailTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_websocket_2_3_7_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_websocket_5_2_12_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/config/WebSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/controller/ChatController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/controller/WsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/pojo/ChatMsg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-mail/src/main/java/com/yeb/mail/MailApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-mail/src/main/java/com/yeb/mail/MailApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-mail/src/main/java/com/yeb/mail/MailReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-mail/src/main/java/com/yeb/mail/MailReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-mail/src/main/resources/config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-mail/src/main/resources/config/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-mail/src/main/resources/templates/mail.html" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-mail/src/main/resources/templates/mail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-mail/target/classes/com/yeb/mail/MailApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-mail/target/classes/com/yeb/mail/MailApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-mail/target/classes/com/yeb/mail/MailReceiver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-mail/target/classes/config/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-mail/target/classes/config/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-mail/target/classes/templates/mail.html" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-mail/target/classes/templates/mail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/YueApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/YueApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/service/impl/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/src/main/java/com/yeb/server/service/impl/EmployeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/YueApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/YueApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/service/impl/EmployeeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/target/classes/com/yeb/server/service/impl/EmployeeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-mail/yeb-mail.iml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-mail/yeb-mail.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeb-server/yeb-server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/yeb-server/yeb-server.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,6 +206,9 @@
       <workItem from="1629378499746" duration="751000" />
       <workItem from="1629379278574" duration="11000" />
       <workItem from="1629379343382" duration="149000" />
+      <workItem from="1629722720650" duration="1158000" />
+      <workItem from="1629723905074" duration="252000" />
+      <workItem from="1629724171687" duration="689000" />
     </task>
     <servers />
   </component>
@@ -259,10 +256,10 @@
       <screen x="0" y="0" width="1707" height="920" />
     </state>
     <state x="1061" y="168" key="#com.intellij.ide.macro.MacrosDialog/0.0.1707.920@0.0.1707.920" timestamp="1629206400578" />
-    <state x="232" y="169" key="#com.intellij.ide.util.MemberChooser" timestamp="1627996362488">
+    <state x="232" y="169" key="#com.intellij.ide.util.MemberChooser" timestamp="1629723374439">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
-    <state x="232" y="169" key="#com.intellij.ide.util.MemberChooser/0.0.1707.920@0.0.1707.920" timestamp="1627996362488" />
+    <state x="232" y="169" key="#com.intellij.ide.util.MemberChooser/0.0.1707.920@0.0.1707.920" timestamp="1629723374439" />
     <state x="415" y="203" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1629377911621">
       <screen x="0" y="0" width="1707" height="920" />
     </state>
