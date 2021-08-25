@@ -153,9 +153,9 @@
         e.id
     </select>
 
-    <resultMap id="EmployeeWithSalary" type="com.xxxx.server.pojo.Employee"
+    <resultMap id="EmployeeWithSalary" type="com.yeb.server.pojo.Employee"
                extends="BaseResultMap">
-        <association property="salary" javaType="com.xxxx.server.pojo.Salary">
+        <association property="salary" javaType="com.yeb.server.pojo.Salary">
             <id column="sid" property="id"/>
             <result column="sbasicSalary" property="basicSalary"/>
             <result column="sbonus" property="bonus"/>
@@ -173,7 +173,7 @@
             <result column="sname" property="name"/>
         </association>
         <association property="department"
-                     javaType="com.xxxx.server.pojo.Department">
+                     javaType="com.yeb.server.pojo.Department">
             <result column="dname" property="name"/>
         </association>
     </resultMap>

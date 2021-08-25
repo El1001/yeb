@@ -1,6 +1,5 @@
 package com.yeb.server.config;
 
-import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -62,7 +61,7 @@ public class Swagger2Config {
                 .title("yeb document")
                 .description("云e办接口文档")
                 .contact(new Contact("yeb", "http:localhost:8081/doc.html",
-                        "xxxx@xxxx.com"))
+                        "123@123.com"))
                 .version("1.0")
                 .build();
     }
