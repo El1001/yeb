@@ -1,25 +1,20 @@
 <template>
     <div>
-        <el-form :rules="rules"
-                 v-loading="loading"
-                 element-loading-text="正在登录..."
-                 element-loading-spinner="el-icon-loading"
-                 element-loading-background="rgba(0, 0, 0, 0.8)"
-                 ref="loginForm"
-                 :model="loginForm"
-                 class="loginContainer">
+        <el-form :rules="rules" v-loading="loading" element-loading-text="正在登录..."
+            element-loading-spinner="el-icon-loading" element-loading-background="rgba(0, 0, 0, 0.8)" ref="loginForm"
+            :model="loginForm" class="loginContainer">
             <h3 class="loginTitle">系统登录</h3>
             <el-form-item prop="username">
-                <el-input type="text" auto-complete="false" v-model="loginForm.username"
-                          placeholder="请输入用户名"></el-input>
+                <el-input type="text" auto-complete="false" v-model="loginForm.username" placeholder="请输入用户名">
+                </el-input>
             </el-form-item>
             <el-form-item prop="password">
-                <el-input type="password" auto-complete="false" v-model="loginForm.password"
-                          placeholder="请输入密码"></el-input>
+                <el-input type="password" auto-complete="false" v-model="loginForm.password" placeholder="请输入密码">
+                </el-input>
             </el-form-item>
             <el-form-item prop="code">
                 <el-input type="text" auto-complete="false" v-model="loginForm.code" placeholder="点击图片更换验证码"
-                          style="width: 250px;margin-right: 5px"></el-input>
+                    style="width: 250px;margin-right: 5px"></el-input>
                 <img :src="captchaUrl" @click="updateCaptcha">
             </el-form-item>
             <el-checkbox v-model="checked" class="loginRemember">记住我</el-checkbox>
@@ -29,8 +24,6 @@
 </template>
 
 <script>
- import {postRequest} from "../utils/api";
-
     export default {
         name: "Login",
         data() {
@@ -44,9 +37,21 @@
                 loading: false,
                 checked: true,
                 rules: {
-                    username: [{required: true, message: '请输入用户名', trigger: 'blur'}],
-                    password: [{required: true, message: '请输入密码', trigger: 'blur'}],
-                    code: [{required: true, message: '请输入验证码', trigger: 'blur'}]
+                    username: [{
+                        required: true,
+                        message: '请输入用户名',
+                        trigger: 'blur'
+                    }],
+                    password: [{
+                        required: true,
+                        message: '请输入密码',
+                        trigger: 'blur'
+                    }],
+                    code: [{
+                        required: true,
+                        message: '请输入验证码',
+                        trigger: 'blur'
+                    }]
                 }
             }
         },
@@ -57,22 +62,29 @@
             },
             submitLogin() {
                 this.$refs.loginForm.validate((valid) => {
-                   if (valid) {
-                        alert(1)
-                        console.log(this.loginForm)
-                        postRequest('/login', this.loginForm).then(resp => {
+                    if (valid) {
+                        this.loading = true;
+                        this.postRequest('/login', this.loginForm).then(resp => {
+                            this.loading = false;
                             if (resp) {
-                                alert(JSON.stringify(resp));
-                           }
-                           alert(1)
-                       })
-                   } else {
+                                //存储用户token
+                                const tokenStr = resp.obj.tokenHead + resp.obj.token;
+                                window.sessionStorage.setItem('tokenStr', tokenStr);
+                                //清空菜单
+                                this.$store.commit('initRoutes', []);
+                                //页面跳转
+                                let path = this.$route.query.redirect;
+                                this.$router.replace((path == '/' || path == undefined) ? '/home' :
+                                    path);
+                            }
+                        })
+                    } else {
                         this.$message.error('请输入所有字段');
                         return false;
-                   }
-
-                });
+                    }
+                })
             }
+
         }
     }
 </script>
